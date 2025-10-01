@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>sPulse-drifts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/stylio.css">
+  <script src="js/script.js" defer></script>
+
+
+</head>
+<body>
+  <!-- progress bar -->
+  <div class="progress-wrap" aria-hidden="true">
+    <div id="progress" class="progress"></div>
+    <div class="progress-labels">
+      <div id="p-left">Intro 0%</div>
+      <div id="p-right">1/3</div>
+    </div>
+  </div>
+
+  <!-- background -->
+  <div class="bg" id="bg"></div>
+
+  <!-- grain SVG -->
+  <svg class="grain" width="130%" height="130%" viewBox="0 0 100 100" preserveAspectRatio="none">
+    <filter id="noiseFilter">
+      <feTurbulence type="fractalNoise" baseFrequency="1.25" numOctaves="3" stitchTiles="stitch">
+        <animate attributeName="baseFrequency" dur="6s" values="1.1;1.3;1.1" repeatCount="indefinite" />
+      </feTurbulence>
+      <feColorMatrix type="saturate" values="0.8"/>
+    </filter>
+    <rect width="100%" height="100%" filter="url(#noiseFilter)"></rect>
+  </svg>
+
+  <!-- language switcher -->
+  <div class="lang" aria-label="language switcher">
+    <button id="lang-en" class="active">EN</button>
+    <button id="lang-es">ES</button>
+  </div>
+
+  <!-- horizontal stages -->
+  <div class="stage" id="stage">
+
+    <!-- intro -->
+    <section id="s-intro" aria-label="intro">
+      <div class="intro-hint" id="intro-hint">scroll to reveal • </div>
+      <div class="intro-line"><div id="line" class="line" aria-hidden="true"></div></div>
+    </section>
+
+    <!-- fighters / lenses -->
+    <section id="s-fighters" aria-label="case study • perception" aria-describedby="fighters-sub">
+      <h1 class="title-xl" id="fighters-title">CHOOSE YOUR LENS</h1>
+      <p class="subtitle" id="fighters-sub">three angles, three logics</p>
+
+      <div class="cards-wrap">
+        <div class="cards" id="cards">
+          <div class="card" data-row="0">
+            <div class="card-inner">
+              <div>
+                <div class="badge" id="hg-badge">OVERVIEW · CLARITY · PATTERN</div>
+                <h3 id="hg-title">HIGH LENS</h3>
+                <div class="sep"></div>
+                <p id="hg-body">from distance: the outline is simple, the noise irrelevant.</p>
+                <div class="pill"></div>
+              </div>
+            </div>
+          </div>
+          <div class="card" data-row="1">
+            <div class="card-inner">
+              <div>
+                <div class="badge" id="mg-badge">BALANCE · CONTEXT · FLUX</div>
+                <h3 id="mg-title">MID LENS</h3>
+                <div class="sep"></div>
+                <p id="mg-body">in between: nothing is fixed, every edge negotiates.</p>
+                <div class="pill"></div>
+              </div>
+            </div>
+          </div>
+          <div class="card" data-row="2">
+            <div class="card-inner">
+              <div>
+                <div class="badge" id="lg-badge">DETAIL · NOISE · SUBTEXT</div>
+                <h3 id="lg-title">GROUND LENS</h3>
+                <div class="sep"></div>
+                <p id="lg-body">close-up: detail screams, sense slows down.</p>
+                <div class="pill"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="s-cta" aria-label="cta">
+      <div class="center">
+        <div>
+          <h1 class="title-xl" id="cta-title">PERSPECTIVE WRITES OUTCOME</h1>
+          <p class="subtitle" id="cta-sub">shift the lens, the story reorders.</p>
+          <div class="btns" role="group" aria-label="primary actions">
+            <button class="btn" id="cta-a">TRACE IT</button>
+            <button class="btn" id="cta-b">RESET THE VIEW</button>
+          </div>
+          <div class="fine" id="cta-fine">perception edits the script</div>
+        </div>
+      </div>
+    </section>
+
+<!-- eyeing it -->
+<section id="s-eye" aria-label="eye section">
+  <div class="eye-wrap">
+    <div class="perception-tool">
+      <h2 id="sights">dual sight tool </h2>
+    </div>
+    <div class="eye-hero" role="img" aria-label="visual metaphor for perception"></div>
+  </div>
+</section>
+
+  </div>
+
+</body>
+</html>
